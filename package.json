@@ -13,7 +13,6 @@
   },
   "homepage": "https://github.com/halo-dev/halo-admin#readme",
   "scripts": {
-    "prepare": "husky install",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:jsdelivr": "vue-cli-service build --mode jsdelivr",

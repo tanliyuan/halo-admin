@@ -7,11 +7,12 @@ const getters = {
   token: state => state.user.token,
   user: state => state.user.user,
   addRouters: state => state.permission.addRouters,
-  apiUrl: state => {
-    if (state.app.apiUrl) {
-      return state.app.apiUrl
-    }
-    return `${window.location.protocol}//${window.location.host}`
+  apiUrl: () => {
+    return 'http://localhost:8090'
+    // if (state.app.apiUrl) {
+    //   return state.app.apiUrl
+    // }
+    // return `${window.location.protocol}//${window.location.host}`
   },
   options: state => state.option.options
 }

@@ -29,6 +29,13 @@
           </a-form-model-item>
         </a-col>
         <a-col :xl="8" :lg="8" :md="12" :sm="12" :xs="12">
+          <a-form-model-item label="显示" prop="visible" help="* 是否在页面显示">
+            <a-switch v-model="menuModel.visible" />
+          </a-form-model-item>
+        </a-col>
+      </a-row>
+      <a-row :gutter="24">
+        <a-col :xl="12" :lg="12" :md="12" :sm="12" :xs="12" :offset="10">
           <a-form-model-item label=" " :colon="false">
             <a-space>
               <ReactiveButton
@@ -115,6 +122,7 @@ export default {
       _this.$refs.menuForm.validate(valid => {
         if (valid) {
           _this.form.saving = true
+          _this.menuModel.visible |= 0
           if (_this.isUpdateMode) {
             menuApi
               .update(_this.menuModel.id, _this.menuModel)
