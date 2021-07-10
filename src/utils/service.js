@@ -6,8 +6,7 @@ import { isObject } from './util'
 
 const service = axios.create({
   timeout: 10000,
-  withCredentials: true,
-  baseURL: 'http://localhost:8090'
+  withCredentials: true
 })
 
 function setTokenToHeader(config) {

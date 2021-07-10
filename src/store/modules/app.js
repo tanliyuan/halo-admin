@@ -23,7 +23,7 @@ const app = {
     fixSiderbar: false,
     autoHideHeader: false,
     color: null,
-    apiUrl: 'http://localhost:8090',
+    apiUrl: null,
     layoutSetting: false,
     loginModal: false
   },
