@@ -237,7 +237,7 @@
           :pagination="false"
           :scrollToFirstRowOnChange="true"
         >
-          <span slot="postTitle" slot-scope="text, record">
+          <span slot="postTitle" slot-scope="title, record">
             <a-icon
               type="pushpin"
               v-if="record.topPriority != 0"
@@ -251,7 +251,7 @@
               target="_blank"
               class="no-underline"
             >
-              <a-tooltip placement="top" :title="'点击访问【' + text + '】'">{{ text }}</a-tooltip>
+              <a-tooltip placement="top" :title="'点击访问【' + title + '】'">{{ title }}</a-tooltip>
             </a>
             <a
               v-else-if="record.status == 'DRAFT'"
@@ -259,10 +259,10 @@
               class="no-underline"
               @click="handlePreview(record.id)"
             >
-              <a-tooltip placement="topLeft" :title="'点击预览【' + text + '】'">{{ text }}</a-tooltip>
+              <a-tooltip placement="topLeft" :title="'点击预览【' + title + '】'">{{ title }}</a-tooltip>
             </a>
             <a v-else href="javascript:void(0);" class="no-underline" disabled>
-              {{ text }}
+              {{ title }}
             </a>
           </span>
           <span slot="status" slot-scope="statusProperty">

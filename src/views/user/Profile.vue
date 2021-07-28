@@ -15,7 +15,7 @@
             <div class="mt-4 mb-1 text-xl font-medium leading-5" style="color: rgba(0, 0, 0, 0.85);">
               {{ userForm.model.nickname }}
             </div>
-            <div>{{ userForm.model.description }}</div>
+            <div v-if="userForm.model.description">{{ userForm.model.description }}</div>
           </div>
           <div>
             <p class="mb-3">
@@ -33,7 +33,6 @@
               <a-list-item>累计获得了 {{ statistics.data.commentCount || 0 }} 条评论。</a-list-item>
               <a-list-item>累计添加了 {{ statistics.data.linkCount || 0 }} 个友链。</a-list-item>
               <a-list-item>文章总阅读 {{ statistics.data.visitCount || 0 }} 次。</a-list-item>
-              <a-list-item></a-list-item>
             </a-list>
           </div>
         </a-card>
@@ -57,7 +56,7 @@
                   <a-form-model-item label="个人说明：" prop="description">
                     <a-input :autoSize="{ minRows: 5 }" type="textarea" v-model="userForm.model.description" />
                   </a-form-model-item>
-                  <a-form-model-item>
+                  <a-form-model-item style="text-align:center;">
                     <ReactiveButton
                       type="primary"
                       @click="handleUpdateProfile"
@@ -88,7 +87,7 @@
                   <a-form-model-item label="确认密码：" prop="confirmPassword">
                     <a-input-password v-model="passwordForm.model.confirmPassword" autocomplete="new-password" />
                   </a-form-model-item>
-                  <a-form-model-item>
+                  <a-form-model-item class="text-center">
                     <ReactiveButton
                       type="primary"
                       @click="handleUpdatePassword"

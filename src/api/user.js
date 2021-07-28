@@ -52,6 +52,17 @@ userApi.mfaUpdate = (mfaType, mfaKey, authcode) => {
   })
 }
 
+userApi.getUserList = (page, size) => {
+  return service({
+    url: `${baseUrl}/list`,
+    method: 'get',
+    params: {
+      pageNum: page,
+      pageSize: size
+    }
+  })
+}
+
 userApi.mfaCheck = authcode => {
   return service({
     url: `${baseUrl}/mfa/check`,

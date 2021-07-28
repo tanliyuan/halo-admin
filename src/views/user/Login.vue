@@ -21,7 +21,7 @@
         </a-col>
       </a-row>
     </div>
-    <div v-show="apiForm.visible" class="api-form animated">
+    <div v-show="apiForm.visible" class="animated">
       <a-form layout="vertical">
         <a-form-item class="animated fadeInUp" :style="{ 'animation-delay': '0.1s' }">
           <a-tooltip placement="top" title="如果 Admin 不是独立部署，请不要更改此 API" trigger="click">

@@ -168,6 +168,12 @@ export const asyncRouterMap = [
             name: 'Profile',
             component: () => import('@/views/user/Profile'),
             meta: { title: '个人资料', hiddenHeaderContent: false }
+          },
+          {
+            path: '/user/list',
+            name: 'UserList',
+            component: () => import('@/views/user/UserManage'),
+            meta: { title: '用户管理', hiddenHeaderContent: false }
           }
         ]
       },
